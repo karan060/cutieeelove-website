@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cutie Vanshu ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #22272e, #ee4141, #f14581);
+            opacity: 0;
+        animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .love-box {
+            background: rgba(231, 38, 38, 0.518);
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .love-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #d523ac;
+            text-align: center;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .music-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .question-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .question-box:hover {
+            background: #fff;
+        }
+
+
+        .love-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff3366, #ff758c);
+            transition: width 1s ease;
+        }
+
+        .cute-gif {
+            background: url('https://i.gifer.com/3Q3h.gif');
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .heart {
+            color: #ff3366;
+            font-size: 2em;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            20% { transform: scale(1.3); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.2); }
+            80% { transform: scale(1); }
+        }
+
+        .editable {
+            border-bottom: 2px dashed #ff3366;
+            padding: 5px;
+            margin: 10px 0;
+            min-height: 30px;
+        }
+
+ /* Heart Floating Animation */
+ .heart-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    
+    .heart {
+        position: absolute;
+        font-size: 40px; /* Bigger hearts */
+        opacity: 0;
+        filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+        animation: float 6s linear infinite; /* Looping effect */
+    }
+    
+    .red-heart {
+        color: #ff3366;
+    }
+    
+    .black-heart {
+        color: rgb(10, 10, 10);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) translateX(0);
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.9;
+        }
+        100% {
+            transform: translateY(-20vh) translateX(calc(var(--random-offset) * 150px));
+            opacity: 0;
+        }
+    }
+
+
+    /*question answer for cutieeee */
+    .love-meter {
+            width: 80%;
+            height: 30px;
+            background: #ffe6e6;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .meter-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff69b4, #ff1493);
+            transition: width 0.8s ease, background 0.8s ease;
+            border-radius: 15px;
+        }
+
+        .question-box {
+            background: rgba(206, 75, 175, 0.9);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 80%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: scale(0.98);
+            transition: transform 0.3s ease;
+        }
+
+        .question-box:hover {
+            transform: scale(1);
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .option {
+            padding: 15px;
+            background: #fff0f5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #ffb6c1;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .correct { background: #98fb98 !important; }
+        .wrong { background: #ffb6c1 !important; }
+
+        h1 {
+            
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            color: #eedae4;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+
+
+        .editable{
+            color: #faf4f4;
+            font-size: x-large;
+            font-family: 'Lobster', cursive;
+            text-shadow: rgba(29, 16, 16, 0.84) 8px 4px 10px
+            
+        }
+        h2{
+            color: #210d0d;
+            font-size: 2rem;
+            text-shadow: rgba(233, 28, 28, 0.988) 8px 4px 10px;
+        }
+
+        
+        
+
+
+        .valentine-box {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,105,180,0.3);
+            text-align: center;
+            width: 350px;
+        }
+
+        .question {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ff69b4;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+        }
+
+        #response {
+            margin-top: 20px;
+            color: white;
+            font-size: 20px;
+            display: none;
+        }
+
+        .teddy-gif {
+            margin-top: 20px;
+            width: 150px;
+            display: none;
+   
+
+
+   }
+
+
+
+   .container4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1000px;
+           
+            
+        }
+
+        .box {
+            background: #ffb3d9;
+            padding: 2rem;
+            border-radius: 15px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.64);
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .content {
+            color: #0b0b0b;
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: 0.3;
+            transition: opacity 0.5s ease-in-out;
+            cursor: text;
+        }
+
+        .box:hover .content {
+            opacity: 1;
+        }
+
+        .content:focus {
+            outline: none;
+            opacity: 1;
+        }
+
+
+
+      #final-message{
+        color: #fff;
+        text-shadow: rgba(37, 5, 5, 0.988) 8px 4px 10px
+      }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="heart-container" id="heartContainer"></div>
+    <div class="container">
+        <h1>❤️ My Cutie Vanshu ❤️</h1>
+
+        <div class="love-box">
+            <h2>How We Met!</h2>
+            <div class="editable" contenteditable="true">when i saw you first time and damn! cutieeee lagi tu mujhe bauth then main ne soach liya tha ek baar to karke dekhu thoda janu tujhe use din jab tune 15 min pehli baar baat kari to pata nhi normal baat thi but mujhe bauth acha laga then no. liya teraaa chat pe to tu hain hi sherrrr but haan mujhee mere dil ne bola first time tujhe dekh ke ki baat krni chahiye! or main apni dil ko abhi tak thanks bol ke thaktaa nhi ki kitna badiyaa decision liyaa main nee ❤️ </div>
+        </div>
+
+        <div class="love-box">
+            <h2>How I Started Falling For You!</h2>
+            <div class="editable" contenteditable="true">main aadha to tujhe dekh hi pyaar mai gir gaya thaa but janna baki tha abhi tujhee so jab baat huii or main ne dekha tera mera perspective kitna same hain or tu kitni achi hain sahi mai mujhe gem mil gaya best cutieeee tujhe jayada smjhanaa nhi padtaaaa tu smjhne ka try karti hain or apni mistake manti hain use par work karti hain mera meri feelings ka itna dhyaan rakhti hain mujheeee realise to ho raha tha ki attache ho raha hoon tere se dheere dheere trust diya pata nahi kyu starting se hi mujhe tere par bauth trust hain sahi mai then slowly cutiee ne mujhe fasa liyaa acha lag mujhe cutiee ke trap mai fas ke jk..... bauth pyaar ho gaya cutieee jab tak pata chala ki itna pyar kartaa hoon tab  main ne soacha ki ek gem hain tu tujh se pyar to hona hi tha itni pyaari jo hain tu❤️</div>
+        </div>
+
+        <div class="love-box">
+            <h2>How Much I am in Love With You!</h2>
+            <div class="editable" contenteditable="true">kaise bataun kitna pyaar kartaaa hoon cutieee mera mood tere par depend hain , my peace , my home ,my love , my everything sab hain tu bauth bauth pyaar kartaa hoon cutiee❤️ tere se achi baat hoti hain na neend achi aati hain gane or ache lgte hain ek sukoon rehtaa hain uk how much i love uhhh ❤️ you are my priority, you are the most important , sahi mai i loveeeeee youuuuuuu sooooooooo muchhhhhhhh meri jaaannnnnnn❤️ </div>
+        </div>
+
+        <div class="love-box">
+            <h2>What I Want And My Expectation!</h2>
+            <div class="editable" contenteditable="true">I want you in my life forver cutieeeee  its lord krishnaaa plan sahi mai tujhe mujhe milvana kal you mad my day with vo cute sa valentine wala question tu har baar meri expectation smjh jati hain or mujhe acha feel karati hain i want ki tu aise smjhee main bhi smjhunga ladai hogi but hum jaise solve karte hain vaise hi solve kar le , cutieee transparency jo tu maintain karti hain i loved it❤️ sahi mai tu mujhee bass aise hi sab bataya kar best❤️ bass ise hi sab bata dia kar mujhe jab tu sab sach sach batati hain itna pyaar aata hain na kya bataun ❤️bass yehi sab bana rahe or haannnnnnn main har baar  jo pyaar tu degi usko double karke tujhe dunga cutieee❤️ i want you forever baby vanshu❤️</div>
+        </div>
+
+
+
+        <!-- Repeat similar boxes for other sections -->
+
+        
+
+        <h1>🌟 That is why you're so unique Vanshu... 🌟</h1>
+    
+        <div class="container4">
+            <div class="box">
+                <div class="content" contenteditable="true">🌸you are beauty with brain matalab itni pyaari smjdaar intelligent or sundar combo main ne aaj tak nhi dekha rare hain tu cutieeeeeeeee goal orianted growth mindset thodi childish i love your childish nature bhi ❤️ matlab PERFECT word ka face hota na tu hoti vo uhh are best cutieee🌸</div>
+            </div>
+            <div class="box">
+                <div class="content" contenteditable="true">💖 kitni pyaaari hain tu hasti hain to aisa lgta hain bass time rukk jaye or tujhe main bass dekhu dekhtaa jaaun matlab itni pure and gem hain tu dil se yahi chiz to mujhee dekh ke itnaa pyaar aata hain sahi mai you are rare cutieee meri cutieeeeeee 💖</div>
+            </div>
+           
+
+
+
+
+        <div class="valentine-box">
+            <div class="question">Vanshu, will you be my Valentine? 💖🌸</div>
+            <div class="buttons">
+                <button class="btn" id="yesBtn">Yes</button>
+                <button class="btn" id="noBtn">No</button>
+            </div>
+            <div id="response"></div>
+            <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Dancing Teddy" class="teddy-gif">
+        </div>
+    
+
+
+        
+
+
+
+        <h1>Our Love Quiz ❤️</h1>
+        <div class="love-meter">
+            <div class="meter-fill"></div>
+        </div>
+    
+        <div id="quiz-container"></div>
+
+        
+            <!-- Add 9 more questions -->
+        </div>
+
+        <div class="love-box" id="final-message">
+            <h2>My Eternal Love</h2>
+            <p>You are my sunshine, my moon, you make evrything unattractive  at the end vanshu i want to say that uhh are the most cutest and lovely sahi mai yarrrrr main sochta the moon wageraa ye sab sabse pyaare hote hain but your smile prove me wrong abhi kissi karke gayi mazaaa aa gaya tune kal jab dikhaya to main bolne wala tha ki main ne bhyi banaya hain but surprise khtm ho jata isliye pichale 2 ya 3 din se main bhi bana rha thaa cutieee or mujhe itna caha laga abhi tu gayi kissi deke kitni pyaari lag rahi thi 
+                ❤️ tere bare mai jitna bolun utna kam hain im blessed ki tu hain mere pass cutiee most blessed person i am i lovee uhhh so much meri jannnnnnnnnnnnnnnn❤️ my cutieee ❤️ 
+            </p>
+            <div class="cute-gif"></div>
+            <div class="heart">♥</div>
+        </div>
+    </div>
+
+    <script>
+       //question for cutieee//
+
+
+       const questions = [
+            {
+                question: "What's my favorite thing about you?",
+                options: ["Your smile", "Your eyes", "Your intelligence", "sab kuch"],
+                answer: 3
+            },
+            {
+                question: "when our first kiss happen?",
+                options: ["12 jan", "16 jan", "20dec", "11jan"],
+                answer: 1
+            },
+            {
+                question: "if i start kissing you where will my hand stay maximum time? ",
+                options: ["on your cheeks", "on your ass", "on your waist", "on your booobs"],
+                answer: 3
+            },
+            {
+                question: "what you like most about mehh?",
+                options: ["my abs", "my hairs", "my specs", "my smile"],
+                answer: 1
+            },
+            {
+                question: "sex kab hogaaa cutieee?",
+                options: ["flow flow mai bb", "2 weeks baad", "2 saal baade", "2 mahine baad"],
+                answer: 0
+            },
+            {
+                question: "what heals mehhh?",
+                options: ["our kiss", "our talk", "our hug", "our fights"],
+                answer: 2
+            },
+            {
+                question: "which is my fav song?",
+                options: ["18", "irradey", "i wanna be yours", "tera hone laga hoon"],
+                answer: 2
+            },
+            {
+                question: "by which word i call you the most?",
+                options: ["cutieee", "vanshu", "pagal", "darling"],
+                answer: 0
+            },
+            {
+                question: "agar bina baat ke daant doon to kaise maregi?",
+                options: ["haathon se", "pan se", "kissi degi", "mukke maregi"],
+                answer: 0
+            },
+            {
+                question: "tu mujhe kitni pyaari lgti hain?",
+                options: ["thodi", "jayada", "infinite ", "bhot"],
+                answer: 2
+            },
+            
+            // Add 8 more questions following the same format
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function updateLoveMeter() {
+            const meter = document.querySelector('.meter-fill');
+            const percentage = (score / questions.length) * 100;
+            meter.style.width = `${percentage}%`;
+            
+            if(percentage === 100) {
+                meter.style.background = 'linear-gradient(90deg, #ffd700, #ff8c00)';
+            }
+        }
+
+        function showQuestion() {
+            const quizContainer = document.getElementById('quiz-container');
+            const q = questions[currentQuestion];
+            
+            const questionHTML = `
+                <div class="question-box">
+                    <h3>${q.question}</h3>
+                    <div class="options">
+                        ${q.options.map((option, index) => `
+                            <div class="option" onclick="checkAnswer(${index})">
+                                ${String.fromCodePoint(0x1F496)} ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            quizContainer.innerHTML = questionHTML;
+        }
+
+        function checkAnswer(selectedIndex) {
+            const options = document.querySelectorAll('.option');
+            const correctIndex = questions[currentQuestion].answer;
+            
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if(index === correctIndex) {
+                    option.classList.add('correct');
+                } else if(index === selectedIndex) {
+                    option.classList.add('wrong');
+                }
+            });
+
+            if(selectedIndex === correctIndex) {
+                score++;
+                updateLoveMeter();
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if(currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showFinalMessage();
+                }
+            }, 1500);
+        }
+
+        function showFinalMessage() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = `
+                <div class="question-box" style="text-align:center;">
+                    <h2>${score === questions.length ? 'Perfect Score! 💖' : 'Thanks for Playing! 💌'}</h2>
+                    <p>Our love score: ${score}/${questions.length}</p>
+                    <p>${score === questions.length ? 
+                        'You know me better than anyone! 🌟' : 
+                        'Let\'s keep learning more about each other! 🌸'}
+                    </p>
+                </div>
+            `;
+        }
+
+        // Start the quiz
+        showQuestion();
+
+        // Add more interactive features as needed
+
+
+
+        function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = `heart ${Math.random() > 0.5 ? 'red-heart' : 'black-heart'}`;
+        heart.innerHTML = Math.random() > 0.5 ? '💗' : ' ❤️';
+        
+        // Random starting position
+        heart.style.left = `${Math.random() * 100}%`;
+        
+        // Random animation variations
+        heart.style.setProperty('--random-offset', Math.random() * 2 - 1);
+        heart.style.animationDuration = `${Math.random() * 5 + 4}s`; // Slower floating
+        heart.style.animationDelay = `${Math.random() * 2}s`;
+        
+        document.getElementById('heartContainer').appendChild(heart);
+        
+        // Remove heart after animation and create a new one for looping effect
+        setTimeout(() => {
+            heart.remove();
+            createHeart(); // Keeps generating new hearts continuously
+        }, 6000);
+    }
+    
+    // Start with a bunch of hearts
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 500); // Staggered start
+    }
+
+
+
+
+//cute question
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const response = document.getElementById('response');
+        const teddy = document.getElementById('teddy');
+
+        yesBtn.addEventListener('click', () => {
+            yesBtn.style.background = '#7cfc00';
+            response.innerHTML = "I love you baby! 💕🐻";
+            response.style.display = "block";
+            teddy.style.display = "block";
+        });
+
+        noBtn.addEventListener('click', () => {
+            // Move the No button when hovered
+            const x = Math.random() * 80 - 40;
+            const y = Math.random() * 80 - 40;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+            
+            // After 3 failed attempts, force Yes
+            setTimeout(() => {
+                yesBtn.style.background = '#7cfc00';
+                response.innerHTML = "bass bauth no par tap kar liyaaaa yeh bhi yes hi hain i lovee you baby! 💖🧸";
+                response.style.display = "block";
+                teddy.style.display = "block";
+                noBtn.style.display = "none";
+            }, 3000);
+        });
+
+
+    </script>
+</body>
+</html>
